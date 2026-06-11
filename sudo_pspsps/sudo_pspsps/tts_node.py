@@ -33,7 +33,7 @@ class TTSNode(Node):
 
     # Path to the Piper voice model file.
     # Download voices from: https://github.com/rhasspy/piper/releases
-    MODEL_PATH = "/home/ri-one/SudoPspsps/src/sudo_pspsps/sudo_pspsps/en_US-amy-low.onnx"
+    MODEL_PATH = "/en_US-amy-low.onnx"
 
     def __init__(self):
         super().__init__('tts_node')
