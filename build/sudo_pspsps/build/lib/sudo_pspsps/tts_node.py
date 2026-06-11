@@ -19,8 +19,6 @@
 #    {"message_to_user": "Hello! Nice to meet you."}
 #
 
-from matplotlib import text
-
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -96,18 +94,21 @@ class TTSNode(Node):
         We then open that buffer as a WAV file and extract the raw audio
         samples (PCM data) to send directly to the speaker stream.
         """
+
+        # Generate speech into an in-memory buffer (no file on disk needed).
         audio_buffer = io.BytesIO()
+        self.voice.speak(text, audio_buffer)
 
-        self.voice.synthesize(text, audio_buffer)
-
+        # Seek back to the start of the buffer so we can read it.
         audio_buffer.seek(0)
 
+        # Open it as a WAV file to extract just the raw PCM audio samples.
         with wave.open(audio_buffer, 'rb') as wav_file:
             pcm_data = wav_file.readframes(wav_file.getnframes())
 
+        # Write the PCM samples to the speaker stream — this plays the audio.
         self.audio_stream.write(pcm_data)
 
-        
 
     # ── Cleanup ───────────────────────────────────────────────────────────────
 
