@@ -1,5 +1,8 @@
 # SudoPsPsPs — 支援ロボット猫
 
+[![English](https://img.shields.io/badge/Language-English-blue)](README.md)
+[![日本語](https://img.shields.io/badge/言語-日本語-red)](README_JA.md)
+
 SudoPsPsPs は、寄り添いと能動的な social interaction を提供するために設計された支援ロボット猫です。パン・チルト式ヘッド機構、コンピュータビジョン（Intel RealSense D455）、ローカル音声処理、そして Liquid Foundation Model（LFM）を用いて、ユーザーに視線を向け続けながら、感情を汲み取った対話を行います。
 
 すべてのインタラクションは **音声コマンドと自然な会話** によって駆動されます。音声認識は Faster-Whisper によりローカルで処理し、負荷の大きい視覚処理と LLM 推論は専用の推論サーバーにオフロードしています。

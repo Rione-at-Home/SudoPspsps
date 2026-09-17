@@ -1,5 +1,8 @@
 # SudoPsPsPs — Assistive Robot Cat
 
+[![English](https://img.shields.io/badge/Language-English-blue)](README.md)
+[![日本語](https://img.shields.io/badge/言語-日本語-red)](README_JA.md)
+
 SudoPsPsPs is an assistive robotic cat designed to provide companionship and proactive social interaction. Using a pan-tilt head mechanism, computer vision (Intel RealSense D455), local speech processing, and a Liquid Foundation Model (LFM), the robot maintains attention on users and engages in meaningful, mood-aware conversations.
 
 All interactions are driven by **vocal commands and natural conversation**, processed locally via Faster-Whisper, with heavy visual and LLM reasoning offloaded to a dedicated inference server.
