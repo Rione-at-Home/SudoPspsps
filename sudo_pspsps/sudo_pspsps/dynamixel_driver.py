@@ -39,7 +39,7 @@ class DynamixelDriver:
 
     def __init__(
         self,
-        device_name = "/dev/ttyACM0",  # USB serial port
+        device_name = "/dev/ttyUSB0",  # USB serial port
         baudrate    = 1000000,          # 1 Mbps — must match servo settings
         pan_id      = 1,
         tilt_id     = 2,
@@ -156,6 +156,10 @@ class DynamixelDriver:
         return position
 
     def _write_position(self, dxl_id, position):
-        self.packet_handler.write4ByteTxRx(
+        comm, err = self.packet_handler.write4ByteTxRx(
             self.port_handler, dxl_id, ADDR_GOAL_POSITION, int(position)
         )
+        if comm != 0:
+            print(f"ID {dxl_id} comm fail: {self.packet_handler.getTxRxResult(comm)}")
+        elif err != 0:
+            print(f"ID {dxl_id} packet error: {self.packet_handler.getRxPacketError(err)}")
