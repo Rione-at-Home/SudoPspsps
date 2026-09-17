@@ -119,19 +119,7 @@ ros2 run sudo_pspsps head_node
 Open separate terminals for each:
 
 ```bash
-ros2 run sudo_pspsps person_targetting_node
-ros2 run sudo_pspsps image_preprocessor
-ros2 run sudo_pspsps stt_node
 ros2 run sudo_pspsps tts_node
-```
-
----
-
-### 5. Start Bridging & Planning Nodes
-
-```bash
-ros2 run sudo_pspsps lfm_bridge_node
-ros2 run sudo_pspsps cat_brain_planner
 ```
 
 ---
