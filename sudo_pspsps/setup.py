@@ -25,6 +25,9 @@ setup(
     entry_points={
     'console_scripts': [
         'head_node = sudo_pspsps.head_node:main',
+        'camera_node = sudo_pspsps.camera_node:main',
+        'brain_node = sudo_pspsps.brain_node:main',
+        'tts_node   = sudo_pspsps.tts_node:main',
     ],
 },
 )

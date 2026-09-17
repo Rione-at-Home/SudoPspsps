@@ -1,0 +1,27 @@
+[0.483s] Invoking command in '/home/ri-one/SudoPsPsPs/SudoPspsps/sudo_pspsps': PYTHONPATH=/home/ri-one/SudoPsPsPs/SudoPspsps/build/sudo_pspsps/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/sudo_pspsps build --build-base /home/ri-one/SudoPsPsPs/SudoPspsps/build/sudo_pspsps/build install --record /home/ri-one/SudoPsPsPs/SudoPspsps/build/sudo_pspsps/install.log --single-version-externally-managed install_data
+[0.648s] running egg_info
+[0.649s] writing ../build/sudo_pspsps/sudo_pspsps.egg-info/PKG-INFO
+[0.649s] writing dependency_links to ../build/sudo_pspsps/sudo_pspsps.egg-info/dependency_links.txt
+[0.649s] writing entry points to ../build/sudo_pspsps/sudo_pspsps.egg-info/entry_points.txt
+[0.649s] writing requirements to ../build/sudo_pspsps/sudo_pspsps.egg-info/requires.txt
+[0.649s] writing top-level names to ../build/sudo_pspsps/sudo_pspsps.egg-info/top_level.txt
+[0.650s] reading manifest file '../build/sudo_pspsps/sudo_pspsps.egg-info/SOURCES.txt'
+[0.650s] writing manifest file '../build/sudo_pspsps/sudo_pspsps.egg-info/SOURCES.txt'
+[0.651s] running build
+[0.651s] running build_py
+[0.651s] copying sudo_pspsps/tts_node.py -> /home/ri-one/SudoPsPsPs/SudoPspsps/build/sudo_pspsps/build/lib/sudo_pspsps
+[0.651s] running install
+[0.651s] running install_lib
+[0.652s] copying /home/ri-one/SudoPsPsPs/SudoPspsps/build/sudo_pspsps/build/lib/sudo_pspsps/tts_node.py -> /home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/python3.10/site-packages/sudo_pspsps
+[0.652s] byte-compiling /home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/python3.10/site-packages/sudo_pspsps/tts_node.py to tts_node.cpython-310.pyc
+[0.653s] running install_data
+[0.653s] running install_egg_info
+[0.654s] removing '/home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/python3.10/site-packages/sudo_pspsps-0.0.0-py3.10.egg-info' (and everything under it)
+[0.654s] Copying ../build/sudo_pspsps/sudo_pspsps.egg-info to /home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/python3.10/site-packages/sudo_pspsps-0.0.0-py3.10.egg-info
+[0.654s] running install_scripts
+[0.667s] Installing brain_node script to /home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/sudo_pspsps
+[0.667s] Installing camera_node script to /home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/sudo_pspsps
+[0.667s] Installing head_node script to /home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/sudo_pspsps
+[0.667s] Installing tts_node script to /home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/sudo_pspsps
+[0.668s] writing list of installed files to '/home/ri-one/SudoPsPsPs/SudoPspsps/build/sudo_pspsps/install.log'
+[0.682s] Invoked command in '/home/ri-one/SudoPsPsPs/SudoPspsps/sudo_pspsps' returned '0': PYTHONPATH=/home/ri-one/SudoPsPsPs/SudoPspsps/build/sudo_pspsps/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ri-one/SudoPsPsPs/SudoPspsps/install/sudo_pspsps/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/sudo_pspsps build --build-base /home/ri-one/SudoPsPsPs/SudoPspsps/build/sudo_pspsps/build install --record /home/ri-one/SudoPsPsPs/SudoPspsps/build/sudo_pspsps/install.log --single-version-externally-managed install_data

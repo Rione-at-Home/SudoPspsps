@@ -1,11 +1,8 @@
-from .dynamixel_driver import DynamixelDriver
+from dynamixel_driver import DynamixelDriver
 import time
 
 driver = DynamixelDriver()
 
-# Verify communication first
-driver.ping(1)
-driver.ping(2)
 
 # Store current positions as zero
 driver.calibrate_zero()
