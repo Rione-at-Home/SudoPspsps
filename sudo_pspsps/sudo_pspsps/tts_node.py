@@ -91,22 +91,39 @@ class TTSNode(Node):
     def _speak(self, text):
         """
         Convert `text` to speech using Piper and play it through the speakers.
-
-        Piper generates a WAV file in memory (an io.BytesIO buffer).
-        We then open that buffer as a WAV file and extract the raw audio
-        samples (PCM data) to send directly to the speaker stream.
         """
-        audio_buffer = io.BytesIO()
+        import tempfile
+        import os
 
-        self.voice.synthesize(text, audio_buffer)
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_wav:
+                temp_wav_path = temp_wav.name
 
-        audio_buffer.seek(0)
+            #Open it cleanly via the wave module so Piper receives a valid WAV file structure
+            with wave.open(temp_wav_path, 'wb') as wav_file:
+                wav_file.setnchannels(1)      # Mono
+                wav_file.setsampwidth(2)     # 16-bit audio = 2 bytes per sample
+                wav_file.setframerate(22050) # Piper default sample rate
+                
+                # Piper writes the generated speech into this real file object
+                self.voice.synthesize(text, wav_file)
 
-        with wave.open(audio_buffer, 'rb') as wav_file:
-            pcm_data = wav_file.readframes(wav_file.getnframes())
+            with wave.open(temp_wav_path, 'rb') as wav_file:
+                pcm_data = wav_file.readframes(wav_file.getnframes())
 
-        self.audio_stream.write(pcm_data)
+            if pcm_data:
+                self.audio_stream.write(pcm_data)
+                
+            else:
+                self.get_logger().warn("Audio generation produced an empty frame sequence.")
 
+        except Exception as e:
+            self.get_logger().error(f"Failed to synthesize speech: {e}")
+
+        finally:
+            # 5. Cleanup: Always ensure the temporary file is removed from disk
+            if 'temp_wav_path' in locals() and os.path.exists(temp_wav_path):
+                os.remove(temp_wav_path)
         
 
     # ── Cleanup ───────────────────────────────────────────────────────────────
