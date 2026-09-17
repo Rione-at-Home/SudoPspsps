@@ -27,7 +27,11 @@ setup(
         'head_node = sudo_pspsps.head_node:main',
         'camera_node = sudo_pspsps.camera_node:main',
         'brain_node = sudo_pspsps.brain_node:main',
-        'tts_node   = sudo_pspsps.tts_node:main',
+        'lfm_bridge_node = sudo_pspsps.lfm_bridge_node:main',
+        'stt_node = sudo_pspsps.stt_node:main',
+        'tts_node = sudo_pspsps.tts_node:main',
+        'cat_brain_planner = sudo_pspsps.cat_brain_planner:main',
+        'person_targeting_node = sudo_pspsps.person_targetting_node:main'
     ],
 },
 )
