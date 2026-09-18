@@ -1,6 +1,0 @@
-[console_scripts]
-brain_node = sudo_pspsps.brain_node:main
-camera_node = sudo_pspsps.camera_node:main
-head_node = sudo_pspsps.head_node:main
-tts_node = sudo_pspsps.tts_node:main
-

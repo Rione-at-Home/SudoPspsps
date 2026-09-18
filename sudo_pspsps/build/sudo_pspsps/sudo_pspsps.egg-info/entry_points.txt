@@ -1,3 +1,0 @@
-[console_scripts]
-head_node = sudo_pspsps.head_node:main
-

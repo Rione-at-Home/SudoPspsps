@@ -1,6 +1,0 @@
-source;share/sudo_pspsps/hook/pythonpath.ps1
-source;share/sudo_pspsps/hook/pythonpath.dsv
-source;share/sudo_pspsps/hook/pythonpath.sh
-source;share/sudo_pspsps/hook/ament_prefix_path.ps1
-source;share/sudo_pspsps/hook/ament_prefix_path.dsv
-source;share/sudo_pspsps/hook/ament_prefix_path.sh
