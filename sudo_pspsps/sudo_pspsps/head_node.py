@@ -22,7 +22,11 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32
 from .dynamixel_driver import DynamixelDriver
-
+from diagnostic_msgs.msg import (
+    DiagnosticArray,
+    DiagnosticStatus,
+    KeyValue
+)
 
 class HeadNode(Node):
 
@@ -62,7 +66,17 @@ class HeadNode(Node):
             self.tilt_callback,
             10,
         )
+        #publisher and timer for health monitoring
+        self.health_pub = self.create_publisher(
+            DiagnosticArray,
+            '/head_health_status',
+            10
+        )
 
+        self.health_timer = self.create_timer(
+            1.0,
+            self.publish_health
+        )
         # ── Control loop timer ────────────────────────────────────────────────
         # This calls control_loop() 20 times per second (every 0.05 seconds).
         # The callbacks above only update the *target*; this loop moves toward it.
@@ -109,6 +123,21 @@ class HeadNode(Node):
 
         self.driver.set_pan(self.current_pan)
         self.driver.set_tilt(self.current_tilt)
+        
+    #Interface test for health monitoring
+    def publish_health(self):
+        msg = DiagnosticArray()
+        msg.header.stamp = self.get_clock().now().to_msg()
+    
+        status = DiagnosticStatus()
+        status.name = "head/monitoring"
+        status.hardware_id = "head"
+    
+        status.level = DiagnosticStatus.STALE
+        status.message = "Motor feedback monitoring not implemented yet"
+    
+        msg.status = [status]
+        self.health_pub.publish(msg)
 
 
     # ── Cleanup ───────────────────────────────────────────────────────────────
